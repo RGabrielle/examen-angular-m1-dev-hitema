@@ -18,6 +18,11 @@ export class CityWeatherComponent implements OnInit {
     this.name = 'Paris';
   }
 
+  onChange(event){
+    this.name = event.target.value;
+    this.loadWeather();
+  }
+  
   ngOnInit() {
     this.loadWeather();
   }

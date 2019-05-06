@@ -1,4 +1,5 @@
 <section routerLink="details/{{name}}" class="weather__card">
+  <input [(ngModel)]='name' (click)="$event.stopPropagation();" (keyup)="onChange($event)"  placeholder="City Name" class="ng-pristine ng-valid ng-touched">
   <span class="city-name__text">
     {{ name }}
   </span>
