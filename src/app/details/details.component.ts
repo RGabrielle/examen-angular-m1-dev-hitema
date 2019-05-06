@@ -14,6 +14,7 @@ export class DetailsComponent implements OnInit {
   hum: number;
   wind: number;
   today: string;
+  days: object;
 
   constructor(public activeRouter: ActivatedRoute, public weatherService: WeatherService) {
   }
@@ -25,6 +26,7 @@ export class DetailsComponent implements OnInit {
       this.temp = this.weatherService.getCurrentTemp(this.city);
       this.hum = this.weatherService.getCurrentHum(this.city);
       this.wind = this.weatherService.getCurrentWind(this.city);
+      this.days = this.weatherService.getForecast();
     });
   }
 }

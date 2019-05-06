@@ -47,12 +47,11 @@
 
     <main class="body-content__wrapper">
       <section class="forecast__container">
-        <!-- display forecast for the whole week --> 
-        <div class="day-weather__container">
-          <span class="day-name"> </span>
-          <span class="day-temp"> °</span>
-          <span class="day-condition"> </span>
-        </div>
+       <div *ngFor="let day of days" class="day-weather__container"> 
+          <span class="day-name"> {{day.name}}</span>
+          <span class="day-temp"> {{day.temp}}</span>
+          <span class="day-condition"> {{day.condition}} </span>
+      </div>
       </section>
     </main>
   </section>
