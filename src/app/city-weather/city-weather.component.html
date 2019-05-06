@@ -1,9 +1,15 @@
-<section class="weather__card">
+<section routerLink="details" class="weather__card">
   <span class="city-name__text">
     {{ name }}
   </span>
   <div class="weather-icon__container">
-    <!-- Add weather icon depending on condition -->
+    <div [ngSwitch]="condition">
+      <i *ngSwitchCase="'clouds'" class="fas fa-cloud-sun fa-7x"></i>
+      <i *ngSwitchCase="'rain'" class="fas fa-cloud-rain fa-7x"></i>
+      <i *ngSwitchCase="'sun'" class="fas fa-sun fa-7x"></i>
+      <i *ngSwitchCase="'storm'" class="fas fa-poo-storm fa-7x"></i>
+      <i *ngSwitchCase="'snow'" class="fas fa-snowflake fa-7x"></i>
+      </div>
     <i class="fas fa-10x"></i>
   </div>
   <div class="temperature-text__container">
